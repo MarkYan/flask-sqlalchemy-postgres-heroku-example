@@ -38,6 +38,8 @@ def remove_entry(entryid):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
+    app.config['USERNAME'] = "testing"
+    app.config['PASSWORD'] = "test123"
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
             error = 'Invalid Username'
